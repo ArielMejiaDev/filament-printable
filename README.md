@@ -1,61 +1,72 @@
-# :package_description
+# Package to get your Filament Resources Printable
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/:vendor_slug/:package_slug/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/:vendor_slug/:package_slug/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/arielmejiadev/filament-printable.svg?style=flat-square)](https://packagist.org/packages/arielmejiadev/filament-printable)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/arielmejiadev/filament-printable/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/arielmejiadev/filament-printable/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/arielmejiadev/filament-printable/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/arielmejiadev/filament-printable/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/arielmejiadev/filament-printable.svg?style=flat-square)](https://packagist.org/packages/arielmejiadev/filament-printable)
 
-<!--delete-->
----
-This repo can be used to scaffold a Filament plugin. Follow these steps to get started:
 
-1. Press the "Use this template" button at the top of this repo to create a new repo with the contents of this skeleton.
-2. Run "php ./configure.php" to run a script that will replace all placeholders throughout all the files.
-3. Make something great!
----
-<!--/delete-->
-
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+This package adds a quick and simple way to print and print-as-pdf your Filament resource tables or forms, 
+pretty handy to add basic reports (a lot of times it would be enough), it works with a any kind of sort, search, filter or paginated or all data.
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require :vendor_slug/:package_slug
+composer require arielmejiadev/filament-printable --dev
 ```
 
-You can publish and run the migrations with:
+You can publish and run the stubs:
 
 ```bash
-php artisan vendor:publish --tag=":package_slug-migrations"
-php artisan migrate
-```
+php artisan filament-printable:install
 
-You can publish the config file with:
+// or
 
-```bash
-php artisan vendor:publish --tag=":package_slug-config"
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag=":package_slug-views"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
+php artisan vendor:publish --tag="filament-printable-stubs"
 ```
 
 ## Usage
 
 ```php
-$variable = new VendorName\Skeleton();
-echo $variable->echoPhrase('Hello, VendorName!');
+// Add print button in a filament list header
+
+class ListUsers extends ListRecords
+{
+    protected function getHeaderActions(): array
+    {
+        return [
+            // ...
+            PrintAction::make(),
+        ];
+    }
+}
+
+
+// Add print button in Filament CreateRecord or EditRecord class
+
+class EditUser extends EditRecord
+{
+    protected function getHeaderActions(): array
+    {
+        return [
+            // ...
+            PrintAction::make(),
+        ];
+    }
+} 
+
+
+// Add print button as a bulk action
+
+->bulkActions([
+    Tables\Actions\BulkActionGroup::make([
+        Tables\Actions\DeleteBulkAction::make(),
+        PrintBulkAction::make(),
+    ]),
+]);
+
 ```
 
 ## Testing
@@ -78,7 +89,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [ArielMejiaDev](https://github.com/ArielMejiaDev)
 - [All Contributors](../../contributors)
 
 ## License

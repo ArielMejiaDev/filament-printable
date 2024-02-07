@@ -1,0 +1,73 @@
+@media print {
+    body {
+        zoom: 99%;
+    }
+
+    .fi-sidebar {
+        display:none !important;
+    }
+
+    .fi-topbar {
+        display: none !important;
+    }
+
+    .fi-sidebar-close-overlay {
+        display: none !important;
+    }
+
+    .fi-main, .fi-page {
+        display: block !important;
+        /*background-color: #fff;*/
+    }
+
+    .fi-main, .fi-page {
+        /*economy*/
+        print-color-adjust: exact !important;
+    }
+
+    .fi-breadcrumbs {
+        display: none !important;
+    }
+
+    .fi-btn, .fi-btn-color-danger {
+        display: none !important;
+    }
+
+    .fi-ta * {
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    .fi-ta-selection-indicator {
+        display: none !important;
+    }
+
+    .fi-ta-header-toolbar {
+        display: none !important;
+    }
+
+    .fi-ta-filter-indicators {
+        display: none !important;
+    }
+
+    .fi-ac-action {
+        display: none !important;
+    }
+
+    .fi-ac-action.printable {
+        display: inherit !important;
+    }
+
+    .fi-ta-header-cell-sort-icon {
+        display: none !important;
+    }
+
+    .fi-ta-table .fi-checkbox-input {
+        display: none !important;
+    }
+
+    .fi-pagination {
+        display: none !important;
+    }
+}
