@@ -2,7 +2,6 @@
 
 namespace ArielMejiaDev\FilamentPrintable\Actions;
 
-use Filament\Actions\Action;
 use Filament\Tables\Actions\BulkAction;
 
 class PrintBulkAction extends BulkAction
