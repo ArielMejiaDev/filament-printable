@@ -69,6 +69,57 @@ class EditUser extends EditRecord
 
 ```
 
+## Print Forms
+
+By default Filament adds some flexible grids to form elements, 
+if you want to set explicitly specific distribution for elements to print documents.
+
+You can use Filament `Grid` and `Section` elements to distribute elements inside a form:
+
+```php
+    public static function form(Form $form): Form
+    {
+        return $form
+            ->schema([
+
+                Forms\Components\Grid::make()->schema([
+                    Forms\Components\TextInput::make('name'),
+                    Forms\Components\TextInput::make('email'),
+                ])->columns([
+                        'xs' => 1,
+                        'sm' => 2,
+                    ]),
+
+                Forms\Components\Section::make([
+                    Forms\Components\TextInput::make('name'),
+                    Forms\Components\TextInput::make('email'),
+                    Forms\Components\TextInput::make('second_email'),
+                ])->columns([
+                        'xs' => 1,
+                        'sm' => 3,
+                    ]),
+            ]);
+    }
+```
+
+> [!IMPORTANT]
+> For Letter and Legal paper sizes the Filament columns `sm` size distribution would be the one used.  
+
+## Customization
+
+Filament Printable includes some css styles to print your resources that most of the time looks awesome, 
+but you can customize your print css to match your requirements, in `public/css/filament-printable/filament-printable-styles.css`
+
+Here an example to remove some section styles to print:
+
+```css
+.fi-section {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+```
+
+
 ## Testing
 
 ```bash
