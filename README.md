@@ -69,7 +69,19 @@ class EditUser extends EditRecord
 
 ```
 
-## Print Forms
+## Print Filament Tables
+
+By default, `filament-printable` set print styles to make tables look good no matter if table has been:
+
+- Sorted
+- Show Search Results
+- Show Filter Results
+- Show Paginated Results
+- Show all results
+
+The styles are easily to customize in `public/css/filament-printable/filament-printable-styles.css`
+
+## Print Filament Forms
 
 By default Filament adds some flexible grids to form elements, 
 if you want to set explicitly specific distribution for elements to print documents.
