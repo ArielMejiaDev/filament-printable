@@ -1,1 +1,1 @@
-{"version":"pest_2.33.4","defects":[],"times":{"P\\Tests\\ExampleTest::__pest_evaluable_it_can_test_print_action":0,"P\\Tests\\ArchTest::__pest_evaluable_it_will_not_use_debugging_functions":0.038,"P\\Tests\\ExampleTest::__pest_evaluable_it_can_test_print_bulk_action":0.01}}
+{"version":"pest_2.33.4","defects":[],"times":{"P\\Tests\\ExampleTest::__pest_evaluable_it_can_test_print_action":0,"P\\Tests\\ArchTest::__pest_evaluable_it_will_not_use_debugging_functions":0.02,"P\\Tests\\ExampleTest::__pest_evaluable_it_can_test_print_bulk_action":0.008}}
