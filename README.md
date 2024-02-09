@@ -14,7 +14,7 @@ pretty handy to add basic reports (a lot of times it would be enough), it works 
 You can install the package via composer:
 
 ```bash
-composer require arielmejiadev/filament-printable --dev
+composer require arielmejiadev/filament-printable
 ```
 
 You can publish and run the stubs:
