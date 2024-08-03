@@ -2,6 +2,16 @@
 
 All notable changes to `filament-printable` will be documented in this file.
 
+## 2.2.0 - 2024-08-03
+
+It adds:
+
+- Added a tooltip to the print action button.
+- Implemented automatic scrolling to the top of the page when the print action occurs.
+- Added support for triggering the print action using the Ctrl+P keyboard shortcut.
+
+Added by @emmanpbarrameda 🎉 🎉 🎉
+
 ## 2.1.0 - 2024-06-25
 
 It adds support for php 8.2
