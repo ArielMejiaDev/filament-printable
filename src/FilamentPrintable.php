@@ -2,6 +2,4 @@
 
 namespace ArielMejiaDev\FilamentPrintable;
 
-class FilamentPrintable
-{
-}
+class FilamentPrintable {}

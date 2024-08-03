@@ -36,9 +36,7 @@ class FilamentPrintableServiceProvider extends PackageServiceProvider
             });
     }
 
-    public function packageRegistered(): void
-    {
-    }
+    public function packageRegistered(): void {}
 
     public function packageBooted(): void
     {
@@ -58,7 +56,7 @@ class FilamentPrintableServiceProvider extends PackageServiceProvider
         }
 
         // Testing
-        Testable::mixin(new TestsFilamentPrintable());
+        Testable::mixin(new TestsFilamentPrintable);
     }
 
     protected function getAssetPackageName(): ?string

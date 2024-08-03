@@ -4,7 +4,7 @@ it('can test print action', function () {
 
     $action = \ArielMejiaDev\FilamentPrintable\Actions\PrintAction::make();
 
-    $listRecord = new \Filament\Resources\Pages\ListRecords();
+    $listRecord = new \Filament\Resources\Pages\ListRecords;
 
     $result = call_user_func($action->getActionFunction(), $listRecord);
 
@@ -18,7 +18,7 @@ it('can test print bulk action', function () {
 
     $action = \ArielMejiaDev\FilamentPrintable\Actions\PrintBulkAction::make();
 
-    $listRecord = new \Filament\Resources\Pages\ListRecords();
+    $listRecord = new \Filament\Resources\Pages\ListRecords;
 
     $result = call_user_func($action->getActionFunction(), $listRecord);
 
