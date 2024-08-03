@@ -52,7 +52,7 @@ class EditUser extends EditRecord
     {
         return [
             // ...
-            PrintAction::make(),
+            \ArielMejiaDev\FilamentPrintable\Actions\PrintAction::make(),
         ];
     }
 } 
@@ -63,7 +63,7 @@ class EditUser extends EditRecord
 ->bulkActions([
     Tables\Actions\BulkActionGroup::make([
         Tables\Actions\DeleteBulkAction::make(),
-        PrintBulkAction::make(),
+        \ArielMejiaDev\FilamentPrintable\Actions\PrintBulkAction::make(),
     ]),
 ]);
 

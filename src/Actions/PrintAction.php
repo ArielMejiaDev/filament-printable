@@ -20,9 +20,15 @@ class PrintAction extends Action
             ->color('primary')
             ->outlined()
             ->label('Print')
+            ->tooltip('Generate a printer-friendly version of this view. (Ctrl+P / Cmd+P)')
             ->icon('heroicon-s-printer')
             ->action(function ($livewire) {
-                $livewire->js('window.print()');
-            });
+                $livewire->js('
+                    window.scrollTo(0, 0);
+                    setTimeout(() => {
+                        window.print();
+                    }, 100);
+                ');
+            })->keyBindings(['mod+p']);
     }
 }

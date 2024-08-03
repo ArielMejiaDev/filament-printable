@@ -20,7 +20,12 @@ class PrintBulkAction extends BulkAction
             ->label('Print')
             ->icon('heroicon-s-printer')
             ->action(function ($livewire) {
-                $livewire->js('window.print()');
+                $livewire->js('
+                    window.scrollTo(0, 0);
+                    setTimeout(() => {
+                        window.print();
+                    }, 100);
+                ');
             });
     }
 }
