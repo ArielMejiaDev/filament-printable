@@ -143,7 +143,7 @@ Here an example to remove some section styles to print:
 To show the changes in your css file you can run:
 
 ```bash
-composer update
+composer update ArielMejiaDev/filament-printable
 ```
 
 
