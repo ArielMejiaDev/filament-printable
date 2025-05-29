@@ -2,6 +2,12 @@
 
 All notable changes to `filament-printable` will be documented in this file.
 
+## 3.0.0 - 2025-05-29
+
+It adds a new CSS rules to work with tables and forms
+
+It adds a new publishable css file
+
 ## 2.2.0 - 2024-08-03
 
 It adds:
