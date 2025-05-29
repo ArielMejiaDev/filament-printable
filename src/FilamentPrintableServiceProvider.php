@@ -53,6 +53,12 @@ class FilamentPrintableServiceProvider extends PackageServiceProvider
                     $file->getRealPath() => base_path("stubs/filament/{$file->getFilename()}"),
                 ], 'filament-printable-stubs');
             }
+
+            $file = app(Filesystem::class)->files(__DIR__ . '/../resources/dist/')[0];
+
+            $this->publishes([
+                $file->getRealPath() => resource_path('/css/filament-printable.css'),
+            ], 'filament-printable-styles');
         }
 
         // Testing
@@ -69,6 +75,14 @@ class FilamentPrintableServiceProvider extends PackageServiceProvider
      */
     protected function getAssets(): array
     {
+        $publishedCss = resource_path('/css/filament-printable.css');
+
+        if (file_exists($publishedCss)) {
+            return [
+                Css::make('filament-printable-styles', $publishedCss),
+            ];
+        }
+
         return [
             Css::make('filament-printable-styles', __DIR__ . '/../resources/dist/filament-printable.css'),
         ];

@@ -17,13 +17,17 @@ You can install the package via composer:
 composer require arielmejiadev/filament-printable
 ```
 
-You can publish and run the stubs:
+## Stubs
+
+You can publish (not necessary) and run the stubs:
 
 ```bash
 php artisan filament-printable:install
+```
 
-// or
+Or
 
+```bash
 php artisan vendor:publish --tag="filament-printable-stubs"
 ```
 
@@ -83,7 +87,7 @@ The styles are easily to customize in `public/css/filament-printable/filament-pr
 
 ## Print Filament Forms
 
-By default Filament adds some flexible grids to form elements, 
+By default, Filament adds some flexible grids to form elements, 
 if you want to set explicitly specific distribution for elements to print documents.
 
 You can use Filament `Grid` and `Section` elements to distribute elements inside a form:
@@ -119,8 +123,13 @@ You can use Filament `Grid` and `Section` elements to distribute elements inside
 
 ## Customization
 
-Filament Printable includes some css styles to print your resources that most of the time looks awesome, 
-but you can customize your print css to match your requirements, in `public/css/filament-printable/filament-printable-styles.css`
+Filament Printable includes a css file that you can publish:
+
+```
+php artisan vendor:publish --tag="filament-printable-styles"
+```
+
+Some css styles to print your resources that most of the time looks awesome, but you can customize your print css to match your requirements, in `resources/css/filament-printable.css`
 
 Here an example to remove some section styles to print:
 
@@ -129,6 +138,12 @@ Here an example to remove some section styles to print:
     background-color: transparent !important;
     box-shadow: none !important;
 }
+```
+
+To show the changes in your css file you can run:
+
+```bash
+composer update
 ```
 
 

@@ -1,73 +1,192 @@
 @media print {
+    /* Base print settings */
     body {
         zoom: 99%;
-    }
-
-    .fi-sidebar {
-        display:none !important;
-    }
-
-    .fi-topbar {
-        display: none !important;
-    }
-
-    .fi-sidebar-close-overlay {
-        display: none !important;
-    }
-
-    .fi-main, .fi-page {
-        display: block !important;
-        /*background-color: #fff;*/
-    }
-
-    .fi-main, .fi-page {
-        /*economy*/
         print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
     }
 
-    .fi-breadcrumbs {
+    /* Hide unwanted UI elements */
+    .fi-sidebar,
+    .fi-topbar,
+    .fi-sidebar-close-overlay,
+    .fi-breadcrumbs,
+    .fi-btn:not(.printable),
+    .fi-btn-color-danger:not(.printable),
+    .fi-ta-selection-indicator,
+    .fi-ta-selection-cell,
+    .fi-ta-actions-cell,
+    .fi-ta-header-toolbar,
+    .fi-ta-filter-indicators,
+    .fi-ac-action:not(.printable),
+    .fi-ta-header-cell-sort-icon,
+    .fi-ta-table .fi-checkbox-input,
+    .fi-pagination {
         display: none !important;
     }
 
-    .fi-btn, .fi-btn-color-danger {
-        display: none !important;
+    .fi-header-heading {
+        color: #000 !important;
+    }
+
+    .fi-section {
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+    }
+
+    /* Show main content */
+    .fi-main,
+    .fi-page {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    /* Printable actions */
+    .fi-ac-action.printable,
+    .fi-btn.printable {
+        display: inherit !important;
+    }
+
+    /* Force white background for all print styles (light and dark mode) */
+    .fi-main,
+    .fi-page {
+        background-color: #fff !important;
+        color: #000 !important;
     }
 
     .fi-ta * {
         color: #000 !important;
+        background-color: #fff !important;
         box-shadow: none !important;
         text-shadow: none !important;
     }
 
-    .fi-ta-selection-indicator {
+    .fi-ta-table {
+        background-color: #fff !important;
+        border-color: #000 !important;
+    }
+
+    .fi-ta-row {
+        background-color: #fff !important;
+        border-color: #ccc !important;
+    }
+
+    .fi-ta-row:nth-child(even) {
+        background-color: #f9f9f9 !important;
+    }
+
+    .fi-ta-header-cell {
+        color: #000 !important;
+        border-color: #000 !important;
+        font-weight: bold !important;
+    }
+
+    .fi-ta-cell {
+        background-color: #fff !important;
+        border-color: #ccc !important;
+        color: #000 !important;
+    }
+
+    /* Common table improvements for both modes */
+    .fi-ta-table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+    }
+
+    .fi-ta-header-cell,
+    .fi-ta-cell {
+        padding: 8px 6px !important;
+        border: 1px solid !important;
+        text-align: left !important;
+        vertical-align: top !important;
+    }
+
+    .fi-ta-header-cell {
+        font-size: 11px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    /* Ensure proper page breaks */
+    .fi-ta-table {
+        page-break-inside: auto !important;
+    }
+
+    .fi-ta-row {
+        page-break-inside: avoid !important;
+        page-break-after: auto !important;
+    }
+
+    .fi-ta-header-cell {
+        page-break-after: avoid !important;
+    }
+
+    /* Form-specific styles for printing */
+    .fi-fo-field-wrp,
+    .fi-fo-field,
+    .fi-input-wrp,
+    .fi-input,
+    .fi-select-input,
+    .fi-checkbox-input,
+    .fi-radio-input,
+    .fi-textarea-input {
+        background-color: #fff !important;
+        color: #000 !important;
+        border-color: #000 !important;
+        box-shadow: none !important;
+    }
+
+    /* Form labels */
+    .fi-fo-field-wrp-label,
+    .fi-fo-field-label,
+    .fi-input-label,
+    .fi-select-label,
+    .fi-checkbox-label,
+    .fi-radio-label {
+        color: #000 !important;
+        background-color: transparent !important;
+        font-weight: 600 !important;
+    }
+
+    /* Form sections and groups */
+    .fi-fo-section,
+    .fi-fo-section-content,
+    .fi-fo-section-header,
+    .fi-fieldset {
+        background-color: #fff !important;
+        color: #000 !important;
+        border-color: #ccc !important;
+    }
+
+    /* Hide form action buttons (except printable ones) */
+    .fi-fo-actions,
+    .fi-ac-btn-group .fi-btn:not(.printable) {
         display: none !important;
     }
 
-    .fi-ta-header-toolbar {
-        display: none !important;
+    /* Remove any hover effects that might interfere */
+    .fi-ta-row:hover,
+    .fi-ta-cell:hover,
+    .fi-input:hover,
+    .fi-select-input:hover {
+        background-color: inherit !important;
     }
 
-    .fi-ta-filter-indicators {
-        display: none !important;
+    /* Responsive adjustments for print */
+    @page {
+        margin: 0.5in;
+        size: auto;
     }
 
-    .fi-ac-action {
-        display: none !important;
-    }
-
-    .fi-ac-action.printable {
-        display: inherit !important;
-    }
-
-    .fi-ta-header-cell-sort-icon {
-        display: none !important;
-    }
-
-    .fi-ta-table .fi-checkbox-input {
-        display: none !important;
-    }
-
-    .fi-pagination {
+    /* Hide any tooltips or dropdowns */
+    .fi-dropdown,
+    .fi-tooltip,
+    [role="tooltip"] {
         display: none !important;
     }
 }
