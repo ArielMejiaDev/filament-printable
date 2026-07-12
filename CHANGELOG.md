@@ -2,6 +2,19 @@
 
 All notable changes to `filament-printable` will be documented in this file.
 
+## 4.0.0 - 2026-07-12
+
+### What's Changed
+
+* Bump aglipanci/laravel-pint-action from 2.5 to 2.6 by @dependabot[bot] in https://github.com/ArielMejiaDev/filament-printable/pull/16
+* Update filament/filament version requirement by @RChutchev in https://github.com/ArielMejiaDev/filament-printable/pull/21
+
+### New Contributors
+
+* @RChutchev made their first contribution in https://github.com/ArielMejiaDev/filament-printable/pull/21
+
+**Full Changelog**: https://github.com/ArielMejiaDev/filament-printable/compare/3.0.0...4.0.0
+
 ## 3.0.0 - 2025-05-29
 
 It adds a new CSS rules to work with tables and forms
